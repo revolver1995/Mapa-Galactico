@@ -1,0 +1,209 @@
+/* 🌌=== ESTILO RESPONSIVE PROFESIONAL ===🌌 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#star-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 🎛️ Panel de control flotante */
+#controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+}
+
+/* 📱 Panel cerrado por defecto en móviles */
+.control-panel {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 14px;
+  width: 260px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* 🌀 Botón flotante */
+#menu-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 200;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+#menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Panel oculto */
+.control-panel.hidden {
+  transform: translateY(-30px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Títulos */
+.control-panel h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #60a5fa;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.control-panel h3 {
+  font-size: 13px;
+  margin: 10px 0 6px 0;
+  color: #93c5fd;
+  text-transform: uppercase;
+}
+
+/* Info */
+.info {
+  background: rgba(37, 99, 235, 0.1);
+  border-left: 2px solid #3b82f6;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.info p {
+  font-size: 11.5px;
+}
+
+/* Filtros */
+.filters label,
+.sector-filter label {
+  display: block;
+  padding: 4px 0;
+  cursor: pointer;
+  font-size: 12px;
+  color: #e0e0e0;
+  transition: color 0.2s;
+}
+
+.filters label:hover,
+.sector-filter label:hover {
+  color: #60a5fa;
+}
+
+.filters input[type="checkbox"],
+.sector-filter input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(0.9);
+}
+
+/* Botones */
+.view-controls button {
+  width: 100%;
+  padding: 6px;
+  margin: 4px 0;
+  font-size: 11.5px;
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.view-controls button:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+}
+
+/* Sliders */
+.view-controls input[type="range"] {
+  width: 100%;
+  margin: 4px 0;
+}
+
+/* Información del objeto */
+.object-info {
+  background: rgba(59, 130, 246, 0.08);
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.object-info h3 {
+  font-size: 13px;
+  color: #60a5fa;
+  margin-bottom: 4px;
+}
+
+#info-text {
+  font-size: 11.5px;
+}
+
+/* Scroll */
+.control-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.control-panel::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 3px;
+}
+
+.control-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
+}
+
+/* 📱 Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  #controls {
+    top: auto;
+    right: auto;
+    bottom: 90px;
+    left: 10px;
+  }
+
+  .control-panel {
+    width: 85vw;
+    max-height: 70vh;
+  }
+
+  #menu-toggle {
+    bottom: 15px;
+    right: 15px;
+  }
+}
